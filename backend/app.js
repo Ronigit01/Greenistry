@@ -16,7 +16,7 @@ const {connectCloudinaty} = require("./config/cloudinary")
 
 
 app.use(cookieParser())
-const allowOrigin = ["http://localhost:5173"]
+const allowOrigin = ["https://euphonious-pony-778499.netlify.app"]
 
 db();
 dotenv.config()
