@@ -30,7 +30,7 @@ module.exports.signupController =async (req,res) =>{
                   httpOnly: true,
                   secure: true,
                   sameSite: "None",
-                  
+                  path: "/",
                   maxAge: 24 * 60 * 60 * 1000, // 1 day
                 });
 
@@ -73,7 +73,7 @@ module.exports.loginController = async (req,res) =>{
                     httpOnly: true,
                     secure: true,           
                     sameSite: 'None',
-                       
+                    path: "/",      
                     maxAge: 24 * 60 * 60 * 1000 // 1 day
                 });
                 res.json({user,message:"user login successfully",success:true})
@@ -101,7 +101,7 @@ module.exports.logoutController = async (req,res) => {
           httpOnly: true,
           secure: true,
           sameSite: "None",
-          
+          path: "/",
         });
         res.json({message:"user logout successfully", success:true})
 

@@ -9,11 +9,16 @@ require("dotenv").config()
 app.use(cookieParser())
 
 const isLoggedin = (req,res,next) =>{
+    const user = localStorage.getItem("user")
    try{
 
        if(!req.cookies.token){
           return res.status(200).json({message:"you must be logged in",success:false})
-          
+       if(!user){
+        return res
+          .status(200)
+          .json({ message: "you must be logged in", success: false });
+       }   
        }else{
 
            req.user = jwt.verify(req.cookies.token, process.env.JWT_SECRET)

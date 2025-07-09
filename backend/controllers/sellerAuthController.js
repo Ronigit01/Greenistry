@@ -17,7 +17,7 @@ module.exports.sellerLoginController = (req, res) => {
             secure: true,           
             sameSite: 'None',      
             maxAge: 24 * 60 * 60 * 1000, // 1 day
-           
+            path:"/"
        });
       res
         .status(200)
@@ -38,7 +38,7 @@ module.exports.sellerLogoutController = (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "None",
-     
+      path: "/",
     });
     res.status(200).json({ message: "seller logout successfully" });
   } catch (err) {
