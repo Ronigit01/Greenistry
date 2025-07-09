@@ -38,4 +38,9 @@ app.use("/api/address", addressRoutes);
 
 
 
-app.listen(3000);
+const PORT = process.env.PORT || 10000;
+const HOST = "0.0.0.0";
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
+});
