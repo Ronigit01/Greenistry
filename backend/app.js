@@ -16,11 +16,11 @@ const {connectCloudinaty} = require("./config/cloudinary")
 
 
 app.use(cookieParser())
-const allowOrigin = ["https://timely-queijadas-5e3f39.netlify.app"]
+
 
 db();
 dotenv.config()
-app.use(cors({origin:allowOrigin, credentials:true}))
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 express.static(path.join(__dirname, "public"))
