@@ -16,15 +16,19 @@ const {connectCloudinaty} = require("./config/cloudinary")
 db();
 
 dotenv.config()
-app.use(cors({
-    origin: "https://greenistry.netlify.app", //frontend URL
-    credentials: true
-  }))
+const corsOptions = {
+  origin: "https://greenistry.netlify.app",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-express.static(path.join(__dirname, "public"))
+app.use(express.static(path.join(__dirname, "public")))
 
 
 
