@@ -33,7 +33,12 @@ module.exports.sellerLoginController = (req, res) => {
 
 module.exports.sellerLogoutController = (req, res) => {
   try {
-    res.clearCookie("sellerToken");
+    res.clearCookie("sellerToken", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+      path: "/",
+    });
     res.status(200).json({ message: "seller logout successfully" });
   } catch (err) {
     console.log(err);
