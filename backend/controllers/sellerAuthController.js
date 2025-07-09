@@ -16,7 +16,8 @@ module.exports.sellerLoginController = (req, res) => {
             httpOnly: true,
             secure: true,           
             sameSite: 'None',      
-            maxAge: 24 * 60 * 60 * 1000 // 1 day
+            maxAge: 24 * 60 * 60 * 1000, // 1 day
+            path:"/"
        });
       res
         .status(200)

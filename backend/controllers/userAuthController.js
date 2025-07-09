@@ -30,6 +30,7 @@ module.exports.signupController =async (req,res) =>{
                   httpOnly: true,
                   secure: true,
                   sameSite: "None",
+                  path: "/",
                   maxAge: 24 * 60 * 60 * 1000, // 1 day
                 });
 
@@ -71,7 +72,8 @@ module.exports.loginController = async (req,res) =>{
                 res.cookie("token",token,{
                     httpOnly: true,
                     secure: true,           
-                    sameSite: 'None',      
+                    sameSite: 'None',
+                    path: "/",      
                     maxAge: 24 * 60 * 60 * 1000 // 1 day
                 });
                 res.json({user,message:"user login successfully",success:true})
@@ -114,7 +116,7 @@ module.exports.checkAuthController = async (req, res) => {
 
     try{
 
-        const userid = req.user.id;
+        const userid = req.user;
         
         const user = await userModel.findOne({_id:userid})
         
