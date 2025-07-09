@@ -36,8 +36,6 @@ app.use("/api/cart",cartRoutes)
 app.use("/api/order", orderRoutes)
 app.use("/api/address", addressRoutes);
 
-
-
 const PORT = process.env.PORT || 10000;
 const HOST = "0.0.0.0";
 
