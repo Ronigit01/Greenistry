@@ -18,7 +18,7 @@ db();
 dotenv.config()
 
 app.use(cors({
-  origin: 'https://lustrous-alfajores-a76097.netlify.app', //frontend URL
+  origin: 'https://visionary-ganache-f19452.netlify.app', //frontend URL
   credentials: true
 }))
 
