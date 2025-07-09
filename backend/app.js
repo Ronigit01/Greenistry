@@ -17,7 +17,7 @@ db();
 
 dotenv.config()
 app.use(cors({
-    origin: 'https://profound-queijadas-206540.netlify.app', //frontend URL
+    origin: "https://greenistry.netlify.app", //frontend URL
     credentials: true
   }))
 
