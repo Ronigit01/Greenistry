@@ -8,7 +8,7 @@ const { addProductController ,getProductController , getProductByIdController, c
 
 router.post("/add-product",isSellerLogin , upload.array("image"), addProductController);
 router.get("/list" , getProductController);
-router.get("/id" , getProductByIdController);
+router.get("/:id" , getProductByIdController);
 router.post("/stock" , isSellerLogin , changeStockController);
 
 

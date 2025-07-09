@@ -62,7 +62,7 @@ module.exports.getProductByIdController = async (req,res) =>{
    
     try{
 
-        const {id} = req.body;
+        const {id} = req.params;
     
         const product = await productModel.findOne({_id:id})
         if(!product) return res.status(404).json({message: "product not found", success: false})
