@@ -126,6 +126,6 @@ module.exports.checkAuthController = async (req, res) => {
 
     }catch(err){
         console.log(err);
-        res.status(500).json({message:"internal server error", success:false});
+        res.status(500).json({message:"internal server error", success:false})
     }
 };
