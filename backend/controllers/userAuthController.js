@@ -25,7 +25,13 @@ module.exports.signupController =async (req,res) =>{
                 })
     
                 const token = generateToken({id:user._id, email:email});
-                res.cookie("token",token)
+                // res.cookie("token",token)
+                res.cookie("token",token,{
+                    httpOnly: true,
+                    secure: true,           
+                    sameSite: 'None',      
+                    maxAge: 24 * 60 * 60 * 1000 // 1 day
+                });
 
                 res.json({user,message:"user created successfully",success:true})
             })
