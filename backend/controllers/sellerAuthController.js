@@ -11,7 +11,13 @@ module.exports.sellerLoginController = (req, res) => {
       password === process.env.SELLER_PASSWORD
     ) {
       const token = generateToken({ email });
-      res.cookie("sellerToken", token);
+      // res.cookie("sellerToken", token);
+      res.cookie("sellerToken",token,{
+                    httpOnly: true,
+                    secure: true,           
+                    sameSite: 'None',      
+                    maxAge: 24 * 60 * 60 * 1000 // 1 day
+                });
       res
         .status(200)
         .json({ message: "seller login successful", success: true });
