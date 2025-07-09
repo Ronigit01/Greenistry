@@ -18,7 +18,7 @@ db();
 dotenv.config()
 
 app.use(cors({
-  origin: 'https://visionary-ganache-f19452.netlify.app', //frontend URL
+  origin: 'https://profound-queijadas-206540.netlify.app', //frontend URL
   credentials: true
 }))
 
