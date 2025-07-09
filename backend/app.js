@@ -24,7 +24,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
 app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -40,5 +39,9 @@ app.use("/api/cart",cartRoutes)
 app.use("/api/order", orderRoutes)
 app.use("/api/address", addressRoutes);
 
+const PORT = process.env.PORT || 10000;
+const HOST = "0.0.0.0";
 
-app.listen(3000);
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
+});
