@@ -14,16 +14,15 @@ const addressRoutes = require("./routes/addressRoutes");
 const cookieParser = require("cookie-parser")
 const {connectCloudinaty} = require("./config/cloudinary")
 
+db();
+dotenv.config()
 
-app.use(cookieParser({
+app.use(cors({
   origin: 'https://celebrated-klepon-9d8494.netlify.app', //frontend URL
   credentials: true
 }))
 
-
-db();
-dotenv.config()
-app.use(cors())
+app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 express.static(path.join(__dirname, "public"))
