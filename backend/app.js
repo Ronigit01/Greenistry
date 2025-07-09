@@ -15,7 +15,10 @@ const cookieParser = require("cookie-parser")
 const {connectCloudinaty} = require("./config/cloudinary")
 
 
-app.use(cookieParser())
+app.use(cookieParser({
+  origin: 'https://celebrated-klepon-9d8494.netlify.app', //frontend URL
+  credentials: true
+}))
 
 
 db();
