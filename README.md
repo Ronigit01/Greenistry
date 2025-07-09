@@ -38,7 +38,7 @@ Backend API: https://greenistry-3.onrender.com
 
 ## 📸 Admin/Seller Credentials
 
-- **Email:** `r2r.com`
+- **Email:** `r@r.com`
 - **Password:** `1234`
 
 ---
