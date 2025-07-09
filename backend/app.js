@@ -18,7 +18,7 @@ db();
 dotenv.config()
 
 app.use(cors({
-  origin: 'https://celebrated-klepon-9d8494.netlify.app', //frontend URL
+  origin: 'https://lustrous-alfajores-a76097.netlify.app', //frontend URL
   credentials: true
 }))
 
