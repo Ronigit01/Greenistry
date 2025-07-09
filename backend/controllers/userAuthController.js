@@ -67,7 +67,13 @@ module.exports.loginController = async (req,res) =>{
             if(result){
                 console.log(user);
                 const token = generateToken({id:user._id,email:user.email})
-                res.cookie("token",token);
+                // res.cookie("token",token);
+                res.cookie("token",token,{
+                    httpOnly: true,
+                    secure: true,           
+                    sameSite: 'None',      
+                    maxAge: 24 * 60 * 60 * 1000 // 1 day
+                });
                 res.json({user,message:"user login successfully",success:true})
             }
         })
