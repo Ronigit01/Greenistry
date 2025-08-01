@@ -33,6 +33,18 @@ app.get("/", (req, res) => {
   res.status(200).send("Homepage OK");
 });
 
+const keepAlive = async () => {
+  try {
+    await axios.get(" https://greenistry-3.onrender.com/");
+
+    await axios.get(tor - backend - link / keep - alive);
+  } catch (err) {
+    console.error("Keep-alive failed:", err.message);
+  }
+};
+
+setInterval(keepAlive, 14 * 60 * 1000);
+
 
 app.use("/images", express.static("public/uploads"))
 app.use("/api/user",authRouter);
